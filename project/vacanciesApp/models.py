@@ -47,6 +47,6 @@ class Skills(models.Model):
 
 class LastVacancy(models.Model):
     title = models.CharField(max_length=100, verbose_name='Заголовок статистика')
-    vacancy = models.TextField(blank=False, verbose_name='Название вакансии', max_length=15)
+    vacancy = models.CharField(blank=False, verbose_name='Название вакансии', max_length=50)
 
 
