@@ -1,15 +1,15 @@
 from django.db import models
 
 
-class Navigation(models.Model):
-    image = models.ImageField(upload_to='%d.%m.%Y', blank=False, verbose_name='Иконка')
-    title = models.CharField(max_length=50, verbose_name='Название вакансии')
-    first_link = models.CharField(max_length=50, verbose_name='Первый пункт')
-    second_link = models.CharField(max_length=50, verbose_name='Второй пункт')
-    third_link = models.CharField(max_length=50, verbose_name='Третий пункт')
-    fourth_link = models.CharField(max_length=50, verbose_name='Четвертый пункт')
-    fifth_link = models.CharField(max_length=50, verbose_name='Пятый пункт')
-    author = models.CharField(max_length=50, verbose_name='Автор')
+# class Navigation(models.Model):
+#     image = models.ImageField(upload_to='%d.%m.%Y', blank=False, verbose_name='Иконка')
+#     title = models.CharField(max_length=50, verbose_name='Название вакансии')
+#     first_link = models.CharField(max_length=50, verbose_name='Первый пункт')
+#     second_link = models.CharField(max_length=50, verbose_name='Второй пункт')
+#     third_link = models.CharField(max_length=50, verbose_name='Третий пункт')
+#     fourth_link = models.CharField(max_length=50, verbose_name='Четвертый пункт')
+#     fifth_link = models.CharField(max_length=50, verbose_name='Пятый пункт')
+#     author = models.CharField(max_length=50, verbose_name='Автор')
 
 
 class Main(models.Model):

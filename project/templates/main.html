@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер IT-проекта</title>
+</head>
+<body>
+    <header>
+        <p>Менеджер IT-проекта</p>
+        <div class="logo">
+          <img src="{% static 'image/logo.png' %}" width="64" height="68" alt="Логотип">
+        </div>
+    </header>
+    <main>
+        <ul class="site-navigation">
+          <li class="site-navigation-item">
+            <a href="/">Главная</a>
+          </li>
+          <li class="site-navigation-item">
+            <a href="{% url 'demand' %}">Востребованность</a>
+          </li>
+          <li class="site-navigation-item">
+            <a href="{% url 'geography' %}">География</a>
+          </li>
+          <li class="site-navigation-item">
+            <a href="{% url 'skills' %}">Навыки</a>
+          </li>
+          <li class="site-navigation-item">
+            <a href="{% url 'last-vac' %}">Последние вакансии</a>
+          </li>
+        </ul>
+        <section class="hero">
+        {% for content in content %}
+            {{ content.description|safe }}
+            <img class="home_img" src="{{ content.image.url  }}"/>
+        {% endfor %}
+        </section>
+    </main>
+    <footer>
+    <p>Глебова Дврья Андреевна АТ-23</p>
+    </footer>
+</body>
+</html>
