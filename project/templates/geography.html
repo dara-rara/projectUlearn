@@ -1,10 +1,68 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер IT-проекта</title>
+    <link rel="shortcut icon" href="{% static 'image/logo.png' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style-geography.css' %}">
 </head>
 <body>
-
+<header class="page-header">
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="{% static 'image/logo.png' %}" width="80" height="70" alt="Логотип">
+        </div>
+        <ul class="site-navigation">
+            <li class="site-navigation-item">
+                <a href="/">Главная</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'demand' %}">Востребованность</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'geography' %}">География</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'skills' %}">Навыки</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'last-vac' %}">Последние вакансии</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main-content">
+    <section class="hero">
+        <h1>Менеджер IT-проекта</h1>
+        {% for data in content %}
+            <h2>Первая статистика</h2>
+            <div class="blog">
+                <img class="demand_graph" src="{{ data.first_graph.url }}" width="700" height="500"/>
+                <div class="tables">
+                    {{ data.first_table|safe }}
+                </div>
+            </div>
+            <h2>Вторая статистика</h2>
+            <div class="blog">
+                <img class="demand_graph" src="{{ data.second_graph.url }}" width="700" height="500"/>
+                <div class="tables">
+                    {{ data.second_table|safe }}
+                </div>
+            </div>
+            <h2>Третья статистика</h2>
+            <div class="blog">
+                <img class="demand_graph" src="{{ data.third_graph.url }}" width="700" height="500"/>
+                <div class="tables">
+                    {{ data.third_table|safe }}
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+</main>
+<footer class="main-footer">
+    <p>Глебова Дарья Андреевна АТ-23</p>
+</footer>
 </body>
 </html>

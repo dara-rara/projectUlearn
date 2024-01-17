@@ -5,6 +5,6 @@ urlpatterns = [
     path('', views.get_main, name='main'),
     path('demand/', views.get_demand, name='demand'),
     path('geography/', views.get_geography, name='geography'),
-    path('skills/', views.get_skills, name='skills')
-    #path('last-vac')
+    path('skills/', views.get_skills, name='skills'),
+    path('last-vac/', views.get_last_vacancies, name='last-vac')
 ]
