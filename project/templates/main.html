@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер IT-проекта</title>
+    <link rel="shortcut icon" href="{% static 'image/logo.png' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style-main.css' %}">
+</head>
+<body>
+<header class="page-header">
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="{% static 'image/logo.png' %}" width="80" height="70" alt="Логотип">
+        </div>
+        <ul class="site-navigation">
+            <li class="site-navigation-item">
+                <a href="/">Главная</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'demand' %}">Востребованность</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'geography' %}">География</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'skills' %}">Навыки</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'last-vac' %}">Последние вакансии</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main-content">
+    <section class="hero">
+        <h1>Менеджер IT-проекта</h1>
+        <div class="content">
+            {% for content in content %}
+            <div class="content-text">
+                {{ content.first_description|safe }}
+            </div>
+            <img class="content_img" src="{{ content.image.url }}" width="1040" height="400" alt="Менеджер IT-проекта"/>
+            <div class="content-text">
+                {{ content.second_description|safe }}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+<footer class="main-footer">
+    <p>Глебова Дарья Андреевна АТ-23</p>
+</footer>
+</body>
+</html>

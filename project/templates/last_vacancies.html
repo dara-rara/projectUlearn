@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер IT-проекта</title>
+    <link rel="shortcut icon" href="{% static 'image/logo.png' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style-last_vacancies.css' %}">
+</head>
+<body>
+<header class="page-header">
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="{% static 'image/logo.png' %}" width="80" height="70" alt="Логотип">
+        </div>
+        <ul class="site-navigation">
+            <li class="site-navigation-item">
+                <a href="/">Главная</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'demand' %}">Востребованность</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'geography' %}">География</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'skills' %}">Навыки</a>
+            </li>
+            <li class="site-navigation-item">
+                <a href="{% url 'last-vac' %}">Последние вакансии</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main-content">
+    <section class="hero">
+        <h1>Менеджер IT-проекта</h1>
+        {% for i in content %}
+        <div class="blog-article short">
+            <h2>{{ i.name }}</h2>
+            <p class="description short"><b>Описание:</b> {{ i.description }}</p>
+            <button class="more" type="button">Читать дальше</button>
+            <p><b>Навыки:</b> {{ i.key_skills }}</p>
+            <p><b>Компания:</b> {{ i.employer }}</p>
+            <p><b>Зарплата:</b> {{ i.salary }}</p>
+            <p><b>Город:</b> {{ i.area }}</p>
+            <p><b>Дата публикации:</b> {{ i.published_at }}</p>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+<footer class="main-footer">
+    <p>Глебова Дарья Андреевна АТ-23</p>
+</footer>
+<script src="{% static 'script.js' %}"></script>
+</body>
+</html>
