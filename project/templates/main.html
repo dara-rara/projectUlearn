@@ -39,9 +39,12 @@
         <div class="content">
             {% for content in content %}
             <div class="content-text">
-                {{ content.description|safe }}
+                {{ content.first_description|safe }}
             </div>
             <img class="content_img" src="{{ content.image.url }}" width="1040" height="400" alt="Менеджер IT-проекта"/>
+            <div class="content-text">
+                {{ content.second_description|safe }}
+            </div>
             {% endfor %}
         </div>
     </section>

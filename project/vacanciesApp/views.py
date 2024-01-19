@@ -27,8 +27,8 @@ def get_skills(request):
 
 
 @csrf_exempt
-def get_last_vacancies(request):
-    name = LastVacancy.objects().all()
+def get_last_vacancies(request, *args, **kwargs):
+    name = LastVacancy.objects.all()
     if name:
         apiHH = ApiHH(name.last().vacancy)
         date = datetime.now().strftime('%Y-%m-%d')
@@ -68,9 +68,8 @@ class ApiHH:
         for vacancy in vacancies:
             data = requests.get(f'https://api.hh.ru/vacancies/{vacancy["id"]}').json()
 
-            if data['salary']['from'] and data['salary']['to']:
+            if data['salary'] and data['salary']['from'] and data['salary']['to']:
                 description = ' '.join(re.sub(re.compile('<.*?>'), '', data['description']).strip().split())
-                description = description[:300] + '...' if len(description) >= 300 else description
                 key_skills = ', '.join([row['name'] for row in data['key_skills']]) if data['key_skills'] else '-'
                 result.append({
                     'name': data['name'],

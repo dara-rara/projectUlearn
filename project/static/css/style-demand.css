@@ -80,7 +80,7 @@ body {
   padding: 0 55px;
 }
 .hero {
-    margin-bottom: 70px;
+    margin-bottom: 100px;
 }
 
 .hero h1 {
@@ -108,7 +108,7 @@ body {
 }
 .blog{
     margin: 0 auto;
-    margin-bottom: 70px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

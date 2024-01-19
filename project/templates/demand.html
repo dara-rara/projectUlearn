@@ -37,21 +37,21 @@
     <section class="hero">
         <h1>Менеджер IT-проекта</h1>
         {% for data in content %}
-            <h2>Первая статистика</h2>
+            <h2>Динамика уровня зарплат по годам</h2>
             <div class="blog">
                 <img class="demand_graph" src="{{ data.first_graph.url }}" width="700" height="500"/>
                 <div class="tables">
                     {{ data.first_table|safe }}
                 </div>
             </div>
-            <h2>Вторая статистика</h2>
+            <h2>Динамика количества вакансий по годам(Менеджер IT-проекта)</h2>
             <div class="blog">
                 <img class="demand_graph" src="{{ data.second_graph.url }}" width="700" height="500"/>
                 <div class="tables">
                     {{ data.second_table|safe }}
                 </div>
             </div>
-            <h2>Третья статистика</h2>
+            <h2>Динамика количества вакансий по годам(все вакансии)</h2>
             <div class="blog">
                 <img class="demand_graph" src="{{ data.third_graph.url }}" width="700" height="500"/>
                 <div class="tables">

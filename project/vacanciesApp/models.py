@@ -3,7 +3,8 @@ from django.db import models
 
 class Main(models.Model):
     image = models.ImageField(upload_to='%d.%m.%Y', blank=False, verbose_name='Изображение')
-    description = models.TextField(blank=True, verbose_name='Описание вакансии')
+    first_description = models.TextField(blank=True, verbose_name='Описание вакансии-1')
+    second_description = models.TextField(blank=True, verbose_name='Описание вакансии-2')
 
 
 class Demand(models.Model):
@@ -40,7 +41,6 @@ class Skills(models.Model):
 
 
 class LastVacancy(models.Model):
-    title = models.CharField(max_length=100, verbose_name='Заголовок статистики')
-    vacancy = models.CharField(blank=False, verbose_name='Название вакансии', max_length=50)
+    vacancy = models.TextField(blank=False, verbose_name='Название вакансии', max_length=50)
 
 

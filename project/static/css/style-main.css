@@ -80,7 +80,7 @@ body {
   padding: 0 55px;
 }
 .hero {
-    margin-bottom: 70px;
+    margin-bottom: 100px;
 }
 
 .hero h1 {
@@ -98,6 +98,9 @@ body {
     margin: 0 auto;
     margin-bottom: 30px;
 }
+.content_img{
+    margin-bottom: 50px;
+}
 
 .content h2{
     margin-bottom: 35px;
@@ -108,7 +111,7 @@ body {
 }
 
 .content-text{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 
 .content-text p{
