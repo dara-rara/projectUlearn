@@ -114,10 +114,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+PROJECT_ROOT = os.path.normpath(os.path.dirname(__file__))
+STATIC_URL = '/static/'
 
-STATIC_URL = 'static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'web_static')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
